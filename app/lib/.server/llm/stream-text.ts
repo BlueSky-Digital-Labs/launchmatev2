@@ -152,9 +152,10 @@ export async function streamText(props: {
   promptId?: string;
   contextOptimization?: boolean;
 }) {
-  const { messages, env: serverEnv, options, apiKeys, files, providerSettings, promptId, contextOptimization } = props;
+  const { messages, env, options, apiKeys, files, providerSettings, promptId, contextOptimization } = props;
 
-  // console.log({serverEnv});
+  const serverEnv = env || {};
+  console.log('serverEnv', serverEnv);
 
   let currentModel = DEFAULT_MODEL;
   let currentProvider = DEFAULT_PROVIDER.name;
