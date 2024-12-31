@@ -49,6 +49,7 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
     promptTokens: 0,
     totalTokens: 0,
   };
+  const env = context.cloudflare?.env || {};
 
   try {
     const options: StreamingOptions = {
@@ -95,7 +96,7 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
 
         const result = await streamText({
           messages,
-          env: context.cloudflare.env,
+          env,
           options,
           apiKeys,
           files,
