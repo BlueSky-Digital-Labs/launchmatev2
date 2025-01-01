@@ -58,6 +58,7 @@ export const Head = createHead(() => (
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <Meta />
     <Links />
+    <title>LaunchMate</title>
     <script dangerouslySetInnerHTML={{ __html: inlineThemeCode }} />
   </>
 ));
